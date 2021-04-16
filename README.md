@@ -21,8 +21,8 @@ Watch Video content with all your friends synchronously, Add as many friends as 
 ## To run this web-app in your local systems :computer:
 
 ### 1. Pre-requisites:
-1. npm
-2. node.js (Install node.js server from https://nodejs.org/en/download/)
+  - npm
+  - node.js (Install node.js server from https://nodejs.org/en/download/)
 ### 2. Clone this Repo :
 ```sh
 git clone git@github.com:Tuntai/Watch-Together_Webapp.git
@@ -39,3 +39,6 @@ npm install
 npm run dev
 ```
 **Now Nevigate to *localhost:3000***
+<hr> 
+
+*Made with ❤️ by team Two_wheeler*
