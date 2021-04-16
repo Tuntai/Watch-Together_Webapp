@@ -1,10 +1,11 @@
 # Watch-Together_Webapp
 Watch Video content with all your friends synchronously, Add as many friends as you want to your Watch Together room, chat and video call with all of them.
 ## Features :sparkles:
-- :red_car: Calculate your Carbon Footprint while travelling from one place to another.
-- :deciduous_tree: Remove Carbon Offset by donating for Tree Plantation.
-- :four_leaf_clover: Go Carbon Neutral and contribute for a sustainable future.
-- :bike: Choose the right mode of Travel and Get a detailed rout.
+- :film_projector:
+- 	:calling:
+- 	:handshake:
+- 	💬
+- 	:tada:
 
 ## Technologies Used :hammer_and_wrench:
  - :construction: Back-End: 
