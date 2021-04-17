@@ -18,7 +18,6 @@ Watch Video content with all your friends synchronously, Add as many friends as 
 
 ## ScreenShots :camera_flash:
 ![Screenshot1](wt.png) 
-![Screenshot2](public/images/chat-app-logo.png)
 <hr> 
 
 ## To run this web-app in your local systems :computer:
