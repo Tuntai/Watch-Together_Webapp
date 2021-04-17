@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+      integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/video_style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+    <script defer src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
+    <script defer src="https://kit.fontawesome.com/c939d0e917.js"></script>
+   <script defer src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+   <script defer src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+   <script defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.2/qs.min.js"
+      integrity="sha256-TDxXjkAUay70ae/QJBEpGKkpVslXaHHayklIVglFRT4="
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="/socket.io/socket.io.js"></script> 
+    <script defer src="js/main.js"></script>
+
+    <title>Online Streaming</title>
+  </head>
+  <body>
+    <!-- select video code -->
+    <!-- <div class="form-control">
+			<label for="username">Username</label>
+			<input
+				type="text"
+				id="video_location"
+				placeholder="Enter username..."
+				required
+			/>
+		</div> -->
+    <div style="display: flex; flex-direction:row">
+    <!-- chatcord code -->
+    <div class="chat-container" style="height:100vh">
+      <header class="chat-header">
+        <h1><img src="images/chat-app-logo.png" style="width:60px;height:60px"> Watch Together</h1>
+        <a id="leave-btn" class="btn">Leave Room</a>
+      </header>
+      <main class="chat-main">
+        <div class="chat-sidebar">
+          <h3><i class="fas fa-comments"></i> Room Name:</h3>
+          <h2 id="room-name"></h2>
+          
+          <h3><i class="fas fa-users"></i> Users</h3>
+          <ul id="users"></ul>
+        </div>
+        <div class="chat-messages"></div>
+      </main>
+      <div class="chat-form-container">
+        <form id="chat-form">
+          <input
+            id="msg"
+            type="text"
+            placeholder="Enter Message"
+            required
+            autocomplete="off"
+          />
+          <button class="btn"><i class="fas fa-paper-plane"></i> Send</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- video player starts here -->
+    <div style="display: flex; flex-direction:column; justify-content:space-evenly;
+    padding-left:25px;padding-right:25px;">
+
+    <div class="player">
+      <video class="player__video viewer" id="movie_player" ></video>
+ 
+      <div class="player__controls">
+        <div class="progress">
+          <button class="player__button toggle" title="Play/Pause" ><span class="iconify" data-icon="bx:bx-play" data-inline="false" ></span></button>
+        <!-- <input type="range" name="volume" class="player__slider" min="0" max="1" step="0.05" value="1"> -->
+        <!-- <input type="range" name="playbackRate" class="player__slider" min="0.5" max="2" step="0.1" value="1"> -->
+        <button data-skip="-10" class="player__button" title="back">
+          <span class="iconify" data-icon="bx:bx-rewind" data-inline="false"></span>
+        </button>
+        <button data-skip="25" class="player__button" title="skip">
+          <span class="iconify" data-icon="bx:bx-fast-forward" data-inline="false"></span>
+          </button>
+         <div class="progress__filled"></div>
+        </div>
+        
+      </div>
+    </div>
+
+
+    <!-- video calling htmls starts here -->
+    <div class="main">
+      <!-- <div class="main__left"> -->
+         <div class="main__videos">
+            <div id="video-grid">
+      
+            </div>
+         </div>
+         <div class="main__controls">
+            <div class="main__controls__block">
+               <div onclick="muteUnmute()" class="main__controls__button main__mute_button">
+                  <i class="fas fa-microphone"></i>
+                  <span>Mute</span>
+               </div>
+               <div onclick="playStop()" class="main__controls__button main__video_button" >
+                  <i class="fas fa-video"></i>
+                  <span>Stop Video</span>
+               </div>
+            </div>
+         </div>
+      <!-- </div> -->
+      <!-- video input tag -->
+      <label for="video_location">video_location</label>
+          <input
+            type="text"
+            id="video_location"
+            placeholder="Enter username..."
+            value="./652333414.mp4"
+          />
+          <button type="button" class="btn btn-primary" onclick="setvideosrc()">Submit</button>
+   </div>
+    </div>
+    </div>
+    <!-- <script src="js/video_scripts.js"></script> -->
+    
+
+  </body>
+  <script>
+    function setvideosrc()
+    {
+      let val=document.getElementById('video_location').value;
+      console.log(val);
+      document.getElementById('movie_player').src= val;
+    }
+  </script>
+</html>
