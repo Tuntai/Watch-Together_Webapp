@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap');
+
+:root {
+	--dark-color-a: #252b50;
+	--dark-color-b: #060e3f;
+	--light-color: #e6e9ff;
+	--success-color: #5cb85c;
+	--error-color: #d9534f;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+  font-family: 'Slabo 27px', serif;
+}
+
+body {
+	font-family: 'Slabo 27px', serif;
+	font-size: 16px;
+	background: #fff;
+	margin: 20px;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+.btn {
+	cursor: pointer;
+	padding: 5px 15px;
+	background: var(--light-color);
+	color: var(--dark-color-a);
+	border: 0;
+	font-size: 17px;
+}
+
+
+/* Join Page */
+.join-container {
+	max-width: 500px;
+	margin: 80px auto;
+	color: #fff;
+  
+}
+
+.join-header {
+	text-align: center;
+	padding: 20px;
+	background: var(--dark-color-a);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  box-shadow: 10px 10px 5px #aaaaaa;
+}
+
+.join-main {
+	padding: 30px 40px;
+	background: var(--dark-color-b);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px; 
+  box-shadow: 10px 10px 5px #aaaaaa; 
+}
+
+.join-main p {
+	margin-bottom: 20px;
+}
+
+.join-main .form-control {
+	margin-bottom: 20px;
+}
+
+.join-main label {
+	display: block;
+	margin-bottom: 5px;
+}
+
+.join-main input[type='text'] {
+	font-size: 16px;
+	padding: 5px;
+	height: 40px;
+	width: 100%;
+}
+
+.join-main select {
+	font-size: 16px;
+	padding: 5px;
+	height: 40px;
+	width: 100%;
+}
+
+.join-main .btn {
+	margin-top: 20px;
+	width: 100%;
+}
+
