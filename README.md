@@ -1,4 +1,4 @@
-<img align="center" src="https://github.com/Tuntai/Bhilai-hack-submission/blob/main/static/images/logo.png" alt="app" height="150px"/>
+<img align="center" src="https://github.com/Tuntai/Watch-Together_Webapp/blob/main/public/images/chat-app-logo.png" alt="app" height="150px"/>
 
 # Watch-Together_Webapp
 Watch Video content with all your friends synchronously, Add as many friends as you want to your Watch Together room, chat and video call with all of them at once.
